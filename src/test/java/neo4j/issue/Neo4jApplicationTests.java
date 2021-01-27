@@ -22,7 +22,7 @@ import neo4j.issue.Neo4jApplication.Location;
 class Neo4jApplicationTests {
     @Autowired
     private PersonRepository repo;
-    /*
+
     @BeforeEach
     public void setup() {
         Person person = new Person();
@@ -45,7 +45,7 @@ class Neo4jApplicationTests {
         repo.save(person);
         
     }
-    */
+
     @Test
     public void testGet() {
         System.out.println("\n\n>>>From Find All>>>" + repo.findAll());
