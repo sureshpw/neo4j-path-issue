@@ -53,6 +53,7 @@ public class Neo4jApplication {
 	public static class GrandChild {
 	    @GeneratedValue @Id
 	    private Long id;
+        private Location location;
 	    private String name;
 	}
 	

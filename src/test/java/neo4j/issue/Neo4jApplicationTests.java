@@ -37,18 +37,23 @@ class Neo4jApplicationTests {
         Location location = new Location();
         location.setAddress("123 Main Street");
         
+        Location location2 = new Location();
+        location2.setAddress("789 Other Street");
+        
         person.setLocation(location);
         person.getChildren().add(child);
         
         child.getGrandChildren().add(gchild);
-        
+
+        gchild.setLocation(location2);
+
         repo.save(person);
         
     }
 
     @Test
     public void testGet() {
-        System.out.println("\n\n>>>From Find All>>>" + repo.findAll());
-        System.out.println("\n\n>>>From APOC Path>>>" + repo.getByPath("person-1"));
+        System.out.println("\n\n>>>From Find All>>>" + repo.findAll() + "\n\n");
+        System.out.println("\n\n>>>From APOC Path>>>" + repo.getByPath("person-1") + "\n\n");
     }
 }
